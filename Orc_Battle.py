@@ -17,23 +17,6 @@ def main():
     orc = Monster('Orc', 100)
 
     while True:
-        # CHECK
-        if orc.health <= 0:
-            clear()
-            bar()
-            print('YOU WON!!!\nCONGRATULATIONS, YOU ARE A TRUE WARRIOR!!!')
-            print('Thanks for playing!!!\nBy: Matheus F.')
-            bar()
-            sleep(3)
-            break
-        if player.health <= 0:
-            clear()
-            bar()
-            print('GAME OVER!!!\nF')
-            print('Thanks for playing!!!\nBy: Matheus F.')
-            bar()
-            sleep(3)
-            break
 
         # OPTIONS
         clear()
@@ -54,8 +37,28 @@ def main():
         if number == '3':
             break
 
+        # CHECK ORC
+        if orc.health <= 0:
+            clear()
+            bar()
+            print('YOU WON!!!\nCONGRATULATIONS, YOU ARE A TRUE WARRIOR!!!')
+            print('Thanks for playing!!!\nBy: Matheus F.')
+            bar()
+            sleep(3)
+            break
+
+        #ORC ATTACK
         orc.attack(randint(0, 25), hero=player)
 
+        # CHECK PLAYER
+        if player.health <= 0:
+            clear()
+            bar()
+            print('GAME OVER!!!\nF')
+            print('Thanks for playing!!!\nBy: Matheus F.')
+            bar()
+            sleep(3)
+            break
 
 def clear():
 
